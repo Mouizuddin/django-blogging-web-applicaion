@@ -1,0 +1,29 @@
+{% extends 'blog_app/base.html'%}
+{% load crispy_forms_tags %}
+{% block dummy_data %}
+<form method="POST">
+    {% csrf_token  %}
+    <div class="container"> 
+        <legend class="border-left-0"> Register Form </legend>
+        <div class="form-group ">
+            <div class="container">
+             {{  user_form | crispy}}
+            </div>
+         </div>
+         <button type="submit" class="btn btn-primary">Submit</button>
+         <small id="emailHelp" class="form-text text-muted">Already a member?  
+             <button type="submit" class="btn btn-secondary btn-sm">Login</button>
+         </small>
+
+    </div>
+    <!-- <div class="container">
+       
+      </div>
+    -->
+    
+    
+  </form>
+
+  <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+
+{% endblock %}

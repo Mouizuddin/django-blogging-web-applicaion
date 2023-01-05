@@ -1,0 +1,17 @@
+{% extends 'blog_app/base.html'%}
+{% block dummy_data %}
+
+<div class="container">
+  {% for data in details %}
+    <div style="padding: 10px;margin-bottom: 50px;border-color: rgb(220, 178, 178);" class="card">        
+        <div style="border-color: black;" class="card-header">
+          {{data.post_author}}
+        </div>
+        <div  class="card-body">
+          <h5 class="card-title"> {{data.title}}</h5>
+          <p class="card-text"> {{data.content}}</p>
+          <a href="#" class="btn btn-primary"> {{data.date_of_post| date:'F d, Y'}}</a>
+        </div>
+      </div>
+      {% endfor %}
+{% endblock %}
